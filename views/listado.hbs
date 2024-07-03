@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row pt-3">
+    <div class="col"></div>
+    <h1 class="text-center">Listado Cursos</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+
+      <table class="table table-hover table-striped table-bordered table-light">
+        <thead>
+          <tr class="text-center">
+            <th>ID</th>
+            <th>Curso</th>
+            <th>Imagen</th>
+            <th>Descripción</th>
+            <th>Duración</th>
+            <th>Modalidad</th>
+            <th>Lugar</th>
+            <th>Precio</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+            <tr>
+              <th>{{id_curso}}</th>
+              <th>{{curso}}</th>
+              <th><img src="{{imagen}}" alt="Imagen Curso" /></th>
+              <th>{{descripcion}}</th>
+              <th>{{duracion}}</th>
+              <th>{{modalidad}}</th>
+              <th>{{lugar}}</th>
+              <th>{{precio}}</th>
+              <th><a
+                  href="/cursos/editarCurso/{{id_curso}}"
+                  class="botonFormulario"
+                >Editar</a></th>
+              <th><a
+                  href="/cursos/eliminarCurso/{{id_curso}}"
+                  class="botonFormulario"
+                >Eliminar</a></th>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="col-2">
+        <a href="/cursos/alta" class="botonFormulario">Agregar Curso</a>
+      </div>
+    </div>
+  </div>
+</div>

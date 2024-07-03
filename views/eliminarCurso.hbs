@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row pt-3">
+    <div class="col"></div>
+    <h1 class="text-center mb-4">¿Quiere eliminar este curso?</h1>
+  </div>
+  {{#each data}}
+  <form action="/cursos/eliminarCurso/{{id_curso}}" method="post" enctype="multipart/form-data">
+    <div class="row">
+      <div class="col">
+        <table class="table table-hover table-striped table-bordered table-light">
+          <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>Curso</th>
+              <th>Imagen</th>
+              <th>Descripción</th>
+              <th>Duración</th>
+              <th>Modalidad</th>
+              <th>Lugar</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>      
+              <tr>
+                <th>{{id_curso}}</th>
+                <th>{{curso}}</th>
+                <th><img src="{{imagen}}" alt="Imagen Curso" /></th>
+                <th>{{descripcion}}</th>
+                <th>{{duracion}}</th>
+                <th>{{modalidad}}</th>
+                <th>{{lugar}}</th>
+                <th>{{precio}}</th>
+              </tr>  
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="botonFormulario btn-block mt-5">Si</button>
+      <a href="/cursos/listado" class="botonFormulario btn-block mb-4 text-center">No</a>
+    </div>
+  </form>
+  {{/each}}
+</div>

@@ -1,0 +1,41 @@
+<div class="container">
+      <div class="section-title text-center">
+        <h1><span>Nuestros Cursos</span></h1>
+      </div>
+        {{#each data}}
+        <div class="row">
+        <div class="col-lg-4 col-md-6 border border-warning rounded p-2">
+          <div class="single-item">
+            <div class="img-holder">
+              <img src="{{{imagen}}}" style="width: 200px"/>
+            </div>
+            <div class="content">
+              <div class="top">
+                <div class="content-heading">
+                  <h3> {{curso}} </h3>
+                  <div class="package-list">
+                <p> {{descripcion}} </p>
+              </div>
+                  <ul>
+                    <li>Duración: {{duracion}} </li>
+                    <li>Modalidad: {{modalidad}} </li>
+                    <li>Lugar: {{lugar}} </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="button text-center">
+              <a
+                rel="nofollow"
+                class="botonFormulario"
+                href="/areaCliente/miCuenta/index.html"
+                title="Inscribirse a PERSONAL TRAINER Y MUSCULACIÓN"
+                ><span>Inscribirse</i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+</div>
+
