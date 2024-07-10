@@ -1,15 +1,17 @@
+
 <div class="formulariosCliente">
   <!-- FORMULARIO DE REGISTRO -->
   <div class="registroCliente">
     <h4 class="tituloH4">
       ¿No tienes una cuenta? Por favor complete la información.
     </h4>
-    <form action="" method="">
+    <form id="registerForm" action="/auth/register" method="post">
       <div class="form-floating mb-3">
         <input
+          name="nombreRegistro"
           type="text"
           class="form-control"
-          id="emailRegistro"
+          id="nombreRegistro"
           placeholder="name@example.com"
         />
         <label for="floatingInput">Nombre</label>
@@ -17,9 +19,10 @@
 
       <div class="form-floating mb-3">
         <input
+          name="apellidoRegistro"
           type="text"
           class="form-control"
-          id="emailRegistro"
+          id="apellidoRegistro"
           placeholder="name@example.com"
         />
         <label for="floatingInput">Apellido</label>
@@ -27,6 +30,7 @@
 
       <div class="form-floating mb-3">
         <input
+          name="emailRegistro"
           type="email"
           class="form-control"
           id="emailRegistro"
@@ -37,12 +41,24 @@
 
       <div class="form-floating mb-3">
         <input
+          name="contrasenaRegistro"
           type="password"
           class="form-control"
-          id="emailRegistro"
+          id="contrasenaRegistro"
           placeholder="name@example.com"
         />
         <label for="floatingInput">Contraseña</label>
+      </div>
+
+    <div class="form-floating mb-3">
+        <input
+          name="contrasenaRegistroC"
+          type="password"
+          class="form-control"
+          id="contrasenaRegistroC"
+          placeholder="name@example.com"
+        />
+        <label for="floatingInput">Repetir contraseña</label>
       </div>
 
       <div class="form-floating mb-3">
@@ -287,10 +303,13 @@
         </div>
       </div>
 
-      <button type="submit" class="botonFormulario" value="IniciarSesión">
+      <button type="submit" class="botonFormulario" value="crearUsuario">
         Crear Usuario
       </button>
     </form>
+    {{#if message }}
+        <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
   </div>
 
   <!-- FORMULARIO DE INGRESO -->
@@ -298,12 +317,13 @@
     <h4 class="tituloH4">
       ¿Tienes una cuenta? Por favor complete la información
     </h4>
-    <form action="" method="">
+    <form id="loginForm" action="/auth/login" method="get">
       <div class="form-floating mb-3">
         <input
+          name="emailLog"
           type="email"
           class="form-control"
-          id="emailRegistro"
+          id="emailLogin"
           placeholder="name@example.com"
         />
         <label for="floatingInput">Email</label>
@@ -311,9 +331,10 @@
 
       <div class="form-floating">
         <input
+          name="contrasenaLog"
           type="password"
           class="form-control"
-          id="emailRegistro"
+          id="contraseñaLogin"
           placeholder="Password"
         />
         <label for="floatingPassword">Password</label>
@@ -323,12 +344,10 @@
         <a href="#">¿Se te olvidó la contraseña?</a>
       </p>
 
-      <button type="submit" class="botonFormulario" value="IniciarSesión">
-        <a
-          class="text-decoration-none text-light"
-          href="/areaCliente/miCuenta"
-        >Iniciar Sesión</a>
+      <button  type="submit" class="botonFormulario" value="IniciarSesión">
+        Iniciar Sesión
       </button>
+      <p class="error">Error al iniciar sesion </p>
     </form>
   </div>
 </div>

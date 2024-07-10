@@ -269,7 +269,7 @@ img {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-#emailRegistro {
+.form-floating {
   border-color: #f17524;
   margin: 30px 0px 30px 0px;
 }
@@ -329,6 +329,10 @@ img {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.error{
+  margin-top: 1rem;
+  color: #f17524;
+}
 /* RESPONSIVE */
 
 @media screen and (max-width: 767px) {
