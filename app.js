@@ -7,7 +7,6 @@ var logger = require("morgan");
 var homeRouter = require("./routes/home");
 var cursosRouter = require("./routes/cursos");
 var areaClienteRouter = require("./routes/areaCliente");
-var miCuentaRouter = require("./routes/miCuenta");
 var authRouter = require("./routes/auth");
 const bodyParser = require("body-parser");
 
@@ -27,7 +26,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", homeRouter);
 app.use("/cursos", cursosRouter);
 app.use("/areaCliente", areaClienteRouter);
-app.use("/miCuenta", miCuentaRouter);
 app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler

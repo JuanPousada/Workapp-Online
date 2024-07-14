@@ -15,12 +15,12 @@ router.get("/", function (req, res, next) {
   });
 });
 
-//Listado
+//Administracion
 
-router.get("/listado", function (req, res, next) {
+router.get("/adminCursos", function (req, res, next) {
   connection.query("SELECT * FROM cursos", function (error, results, fields) {
     if (error) throw error;
-    res.render("listado", { data: results });
+    res.render("adminCursos", { data: results });
   });
 });
 
@@ -70,7 +70,7 @@ router.post(
 
     connection.query(sentencia, function (error, results, fields) {
       if (error) throw error;
-      res.render("finalizado", { mensaje: "Curso editado correctamente" });
+      res.render("finalizado", { descripcion: "Su curso se ha editado correctamente" });
     });
   }
 );
@@ -92,7 +92,7 @@ router.post("/eliminarCurso/:id_curso", function (req, res, next) {
     "delete from cursos where id_curso = " + req.params.id_curso,
     function (error, results, fields) {
       if (error) throw error;
-      res.render("finalizado", { mensaje: "Curso eliminado correctamente" });
+      res.render("finalizado", { descripcion: "El curso se ha eliminado correctamente" });
     }
   );
 });

@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 ul {
   list-style: none;
 }
@@ -11,8 +17,21 @@ body {
   padding-top: 55px;
 }
 
-.btn-1 {
+.btnWA {
+  background-color: #000000;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.btnWA:hover {
   background-color: #f17524;
+  color: #ffca8b;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
 }
 
 /*MAIN*/

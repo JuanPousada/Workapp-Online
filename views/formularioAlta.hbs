@@ -1,96 +1,48 @@
 <div class="container-fluid mb-5">
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
-
-      <h1 class="text-center text-dark p-2 mt-4">Carga de Cursos</h1>
-
+      <div class="section-title text-center m-2 p-3">
+        <h1 class="col-12"><span class="col-12">Carga de curso</span></h1>
+      </div>
       <form action="/cursos/alta" method="post" enctype="multipart/form-data">
         <div class="form-group my-3">
           <label for="formGroupExampleInput">Curso</label>
-          <input
-            type="text"
-            class="form-control"
-            id="formGroupExampleInput"
-            placeholder="Ingrese nombre del curso"
-            name="curso"
-          />
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese nombre del curso" name="curso"/>
         </div>
-
         <div class="form-group my-3">
           <label for="exampleFormControlFile1">Imagen</label>
-          <input
-            type="file"
-            class="form-control"
-            id="exampleFormControlFile1"
-            name="imagen"
-          />
+          <input type="file" class="form-control" id="exampleFormControlFile1" name="imagen"/>
         </div>
-
         <div class="form-group my-3">
           <label for="formGroupExampleInput2">Descripción</label>
-          <input
-            type="text"
-            class="form-control"
-            id="formGroupExampleInput2"
-            placeholder="Ingrese la descripción del curso"
-            name="descripcion"
-          />
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ingrese la descripción del curso" name="descripcion"/>
         </div>
-
         <div class="form-group my-3">
           <label for="exampleFormControlFile1">Duración</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlFile1"
-            placeholder="Ingrese duración del curso"
-            name="duracion"
-          />
+          <input type="text" class="form-control" id="exampleFormControlFile1" placeholder="Ingrese duración del curso" name="duracion"/>
         </div>
 
         <div class="form-group my-3">
           <label for="exampleFormControlFile1">Modalidad</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlFile1"
-            placeholder="Ingrese modalidad del curso"
-            name="modalidad"
-          />
+          <input type="text" class="form-control" id="exampleFormControlFile1" placeholder="Ingrese modalidad del curso" name="modalidad"/>
         </div>
 
         <div class="form-group my-3">
           <label for="exampleFormControlFile1">Lugar</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlFile1"
-            placeholder="Ingrese lugar del curso"
-            name="lugar"
-          />
+          <input type="text" class="form-control" id="exampleFormControlFile1" placeholder="Ingrese lugar del curso" name="lugar"/>
         </div>
 
         <div class="form-group my-3">
           <label for="exampleFormControlFile1">Precio</label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleFormControlFile1"
-            placeholder="Ingrese precio del curso"
-            name="precio"
-          />
+          <input type="text" class="form-control" id="exampleFormControlFile1" placeholder="Ingrese precio del curso" name="precio"/>
         </div>
-
         <div class="d-grid gap-2 col-6 mx-auto">
-          <button
-            type="submit"
-            class="botonFormulario btn-block mt-3"
-          >Agregar</button>
-
-          <a
-            href="/cursos/listado"
-            class="botonFormulario btn-block text-center"
-          >Retornar</a>
+          <button type="submit" class="botonFormulario btn-block mt-3">
+            Agregar
+          </button>
+          <a href="/cursos/adminCursos" class="botonFormulario btn-block text-center">
+          Retornar
+          </a>
         </div>
       </form>
     </div>

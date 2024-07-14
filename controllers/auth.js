@@ -73,12 +73,9 @@ exports.login = (req, res)=>{
                 messageLogin: 'Contraseña incorrecta'
               })
             } else {
-              connection.query("select id_usuario from usuarios",
-                function (error, results, fields) {
-                  if (error) throw error;
-                  res.redirect("/miCuenta/:id_usuario");
-                }
-              );
+                res.render("finalizado", {
+                  descripcion: "Se ha iniciado Sesión Correctamente"
+                });
             }
           })
         })          

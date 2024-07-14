@@ -1,11 +1,13 @@
-<div
-  class="container-fluid"
-  style="background-color: rgb(234, 232, 239); height: auto;"
->
+<div class="section-title text-center m-2 p-3">
+  <h1 class="col-12">
+    <span class="col-12">
+      Editar curso
+    </span>
+  </h1>
+</div>
+<div class="container">
   <div class="row justify-content-center pb-5">
     <div class="col-12 col-md-8 col-lg-6">
-
-      <h1 class="text-center text-dark p-2 mt-4">Editar Curso</h1>
 
       {{#each data}}
 
@@ -103,7 +105,7 @@
           </div>
           <div class="d-grid gap-2 col-6 mx-auto">
             <button type="submit" class="botonFormulario btn-block mt-5">Modificar</button>
-            <a href="/cursos/listado" class="botonFormulario btn-block mt-4 mb-4 text-center">Retornar</a>
+            <a href="/cursos/adminCursos" class="botonFormulario btn-block mt-4 mb-4 text-center">Retornar</a>
           </div>
         </form>
 
@@ -114,12 +116,17 @@
 </div>
 
 <script>
-  let archivo = document.getElementById("exampleFormControlFile1"); let imagen =
-  document.getElementById("imagenProbando"); let file;
-  archivo.addEventListener("change",function(){ file = archivo.files[0];
-  if(file){ const fileReader = new FileReader();
-  fileReader.addEventListener("load",function(){
-  imagen.setAttribute("src",fileReader.result); })
-  fileReader.readAsDataURL(file); } })
+  let archivo = document.getElementById("exampleFormControlFile1"); 
+  let imagen = document.getElementById("imagenProbando"); let file;
+  archivo.addEventListener("change",function(){
+    file = archivo.files[0];
+    if(file){ 
+      const fileReader = new FileReader();
+      fileReader.addEventListener("load",function(){
+        imagen.setAttribute("src",fileReader.result); 
+      })
+    fileReader.readAsDataURL(file); 
+    } 
+  })
 
 </script>
