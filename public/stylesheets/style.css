@@ -115,6 +115,10 @@ h6 {
   border-width: 1px;
   border-style: solid;
   border-color: #f17524;
+} 
+
+.mainContainer .btn{
+  background-color: #f17524;
 }
 
 /* /MAIN--------------------------------------------
@@ -296,6 +300,45 @@ img {
   justify-content: space-around;
 }
 
+/*Area cliente
+
+/* Listado </*/
+  .containerCursos{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+  }  
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    max-height: 50rem;
+    margin-bottom: 5rem;
+}
+
+.containerCursos .button{
+  margin-bottom: 1rem;
+}
+
+.containerCursos a{
+  background-color: #f17524;
+  font-weight: 200;
+}
+
+.list-group a{
+  background-color: #f17524;
+}
+
+.list-group .active{
+  border-style: none;
+  background-color: #ffca8b !important;
+}
+
+/* Listado > */
+
 /*Mi Cuenta*/
 
 .mb-50 {
@@ -443,6 +486,4 @@ img {
   .mainBtn:hover {
     background-color: #f17524;
     opacity: 100%;
-  }
-  /* AREA CLIENTE */
-}
+  }}

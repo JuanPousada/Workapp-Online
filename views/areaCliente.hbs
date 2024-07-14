@@ -317,10 +317,10 @@
     <h4 class="tituloH4">
       ¿Tienes una cuenta? Por favor complete la información
     </h4>
-    <form id="loginForm" action="/auth/login" method="get">
+    <form id="loginForm" action="/auth/login" method="POST">
       <div class="form-floating mb-3">
         <input
-          name="emailLog"
+          name="emailLogin"
           type="email"
           class="form-control"
           id="emailLogin"
@@ -331,7 +331,7 @@
 
       <div class="form-floating">
         <input
-          name="contrasenaLog"
+          name="contrasenaLogin"
           type="password"
           class="form-control"
           id="contraseñaLogin"
@@ -347,7 +347,9 @@
       <button  type="submit" class="botonFormulario" value="IniciarSesión">
         Iniciar Sesión
       </button>
-      <p class="error">Error al iniciar sesion </p>
+      {{#if messageLogin }}
+        <h4 class="alert alert-danger mt-4">{{messageLogin}}</h4>
+      {{/if}}
     </form>
   </div>
 </div>
