@@ -1,6 +1,7 @@
 <div class="container mt-5">
   <h2>Mi Cuenta</h2>
   <hr class="linea-divisoria" />
+  {{#each data}}
   <form>
     <div class="row">
       <div class="col-md-4 mb-50">
@@ -63,73 +64,37 @@
       <div class="col-md-4 mb-50">
         <div class="mb-3">
           <label for="nombre" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            name="nombre"
-            required
-          />
+          <p>{{nombre}}</p>
         </div>
         <div class="mb-3">
           <label for="apellido" class="form-label">Apellido</label>
-          <input
-            type="text"
-            class="form-control"
-            id="apellido"
-            name="apellido"
-            required
-          />
+          <p>{{apellido}}</p>
         </div>
         <div class="mb-3">
           <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
-          <input
-            type="date"
-            class="form-control"
-            id="fecha_nacimiento"
-            name="fecha_nacimiento"
-            required
-          />
+          <p>{{fechaNac}}</p>
         </div>
       </div>
       <div class="col-md-4 mb-50">
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            required
-          />
+          <p>{{email}}</p>
         </div>
         <div class="mb-3">
           <label for="pais" class="form-label">País</label>
-          <select class="form-select" id="pais" name="pais" required>
-            <option value="">Selecciona tu país</option>
-            <option value="argentina">Argentina</option>
-            <option value="brasil">Brasil</option>
-            <option value="chile">Chile</option>
-          </select>
+          <p>{{pais}}</p>
         </div>
         <div class="mb-3">
           <label for="telefono" class="form-label">Teléfono</label>
-          <input
-            type="tel"
-            class="form-control"
-            id="telefono"
-            name="telefono"
-            required
-          />
+          <p>{{pais}}</p>
         </div>
       </div>
     </div>
-
     <div class="row justify-content-end mb-4">
       <div class="col-md-4">
-        <button type="submit" class="botonFormulario">
-          Guardar cambios
-        </button>
+        <a href="/miCuenta/editarPerfil/" class="botonFormulario">
+          Editar perfil
+        </a>
       </div>
     </div>
   </form>
@@ -151,21 +116,15 @@
         </thead>
         <tbody>
           <tr>
-            <td>10/06/2023</td>
-            <td>Curso de Programación en Bootstrap</td>
-            <td>Completado</td>
-            <td>22/07/2023</td>
+            <td>{{inscripcion}}</td>
+            <td>{{curso}}</td>
+            <td>{{estado}}</td>
+            <td>{{fecha}}</td>
             <td><a href="#">Ver certificado</a></td>
-          </tr>
-          <tr>
-            <td>15/08/2023</td>
-            <td>Curso Avanzado de JavaScript</td>
-            <td>En progreso</td>
-            <td>-</td>
-            <td>-</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+{{/each}}

@@ -44,8 +44,7 @@ router.post("/alta", upload.single("imagen"), async function (req, res, next) {
 });
 
 router.get("/editarCurso/:id_curso", function (req, res, next) {
-  connection.query(
-    "SELECT * FROM cursos WHERE id_curso = " + req.params.id_curso,
+  connection.query("SELECT * FROM cursos WHERE id_curso = " + req.params.id_curso,
     function (error, results, fields) {
       if (error) throw error;
       res.render("editarCurso", { data: results });

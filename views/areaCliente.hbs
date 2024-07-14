@@ -314,36 +314,19 @@
 
   <!-- FORMULARIO DE INGRESO -->
   <div class="ingresoCliente">
-    <h4 class="tituloH4">
-      ¿Tienes una cuenta? Por favor complete la información
-    </h4>
+    <h4 class="tituloH4"> ¿Tienes una cuenta? Por favor complete la información </h4>
     <form id="loginForm" action="/auth/login" method="POST">
       <div class="form-floating mb-3">
-        <input
-          name="emailLogin"
-          type="email"
-          class="form-control"
-          id="emailLogin"
-          placeholder="name@example.com"
-        />
-        <label for="floatingInput">Email</label>
+        <input name="emailLogin" type="email" class="form-control" id="emailLogin" placeholder="Email"/>
+        <label for="email">Email</label>
       </div>
-
-      <div class="form-floating">
-        <input
-          name="contrasenaLogin"
-          type="password"
-          class="form-control"
-          id="contraseñaLogin"
-          placeholder="Password"
-        />
+      <div class="form-floating"> 
+        <input name="contrasenaLogin" type="password" class="form-control" id="contraseñaLogin" placeholder="Password"/>
         <label for="floatingPassword">Password</label>
       </div>
-
       <p class="forgot py-2">
         <a href="#">¿Se te olvidó la contraseña?</a>
       </p>
-
       <button  type="submit" class="botonFormulario" value="IniciarSesión">
         Iniciar Sesión
       </button>

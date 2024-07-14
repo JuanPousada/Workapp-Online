@@ -72,8 +72,13 @@ exports.login = (req, res)=>{
               res.render('areaCliente',{
                 messageLogin: 'Contraseña incorrecta'
               })
-            }else{
-              res.render('miCuenta')
+            } else {
+              connection.query("select id_usuario from usuarios",
+                function (error, results, fields) {
+                  if (error) throw error;
+                  res.redirect("/miCuenta/:id_usuario");
+                }
+              );
             }
           })
         })          

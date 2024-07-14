@@ -1,125 +1,128 @@
-<div
-  class="container-fluid"
-  style="background-color: rgb(234, 232, 239); height: auto;"
->
-  <div class="row justify-content-center pb-5">
-    <div class="col-12 col-md-8 col-lg-6">
-
-      <h1 class="text-center text-dark p-2 mt-4">Editar Curso</h1>
-
-      {{#each data}}
-
-        <form
-          action="/cursos/editarCurso/{{id_curso}}"
-          method="post"
-          enctype="multipart/form-data"
-        >
-          <div class="form-group my-3">
-            <label for="formGroupExampleInput">Curso</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder="Ingrese su nombre"
-              name="curso"
-              value="{{curso}}"
+<div class="container mt-5">
+  <h2>Mi Cuenta</h2>
+  <hr class="linea-divisoria" />
+  <form>
+    <div class="row">
+      <div class="col-md-4 mb-50">
+        <div class="mb-3 text-center">
+          <label for="foto_perfil" class="form-label">
+            <img
+              src="/img/perfil.jpg"
+              alt="Foto de perfil"
+              class="profile-picture"
+              id="preview_image"
             />
-          </div>
-
-          <div class="form-group my-3">
-            <label for="exampleFormControlFile1">Imagen</label>
             <input
               type="file"
-              class="form-control"
-              id="exampleFormControlFile1"
-              name="imagen"
+              class="form-control mt-2"
+              id="foto_perfil"
+              name="foto_perfil"
+              accept="image/*"
             />
-            <label for="" class="mt-2">{{imagen}}</label>
-
-            <img
-              src="{{imagen}}"
-              class="mt-2"
-              style="width: 100%;"
-              alt=""
-              id="imagenProbando"
-            />
-
+          </label>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Género</label>
+          <div class="custom-radio">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="genero"
+                id="genero_f"
+                value="F"
+                required
+              />
+              <label class="form-check-label" for="genero_f">Femenino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="genero"
+                id="genero_m"
+                value="M"
+                required
+              />
+              <label class="form-check-label" for="genero_m">Masculino</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="genero"
+                id="genero_o"
+                value="O"
+                required
+              />
+              <label class="form-check-label" for="genero_o">Otros</label>
+            </div>
           </div>
-
-          <div class="form-group my-3">
-            <label for="formGroupExampleInput2">Descripción</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput2"
-              placeholder="Ingrese el detalle de la Obra"
-              name="descripcion"
-              value="{{descripcion}}"
-            />
-          </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlFile1">Duración</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlFile1"
-              placeholder="Ingrese duración del curso"
-              name="duracion"
-              value="{{duracion}}"
-            />
-          </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlFile1">Modalidad</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlFile1"
-              placeholder="Ingrese modalidad del curso"
-              name="modalidad"
-              value="{{modalidad}}"
-            />
-          </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlFile1">Lugar</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlFile1"
-              placeholder="Ingrese lugar del curso"
-              name="lugar"
-              value="{{lugar}}"
-            />
-          </div>
-          <div class="form-group my-3">
-            <label for="exampleFormControlFile1">Precio</label>
-            <input
-              type="text"
-              class="form-control"
-              id="exampleFormControlFile1"
-              placeholder="Ingrese precio del curso"
-              name="precio"
-              value="{{precio}}"
-            />
-          </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
-            <button type="submit" class="botonFormulario btn-block mt-5">Modificar</button>
-            <a href="/cursos/listado" class="botonFormulario btn-block mt-4 mb-4 text-center">Retornar</a>
-          </div>
-        </form>
-
-      {{/each}}
-
+        </div>
+      </div>
+      <div class="col-md-4 mb-50">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="{{nombre}}"/>
+        </div>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            id="apellido"
+            name="apellido"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+          <input
+            type="date"
+            class="form-control"
+            id="fecha_nacimiento"
+            name="fecha_nacimiento"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-4 mb-50">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="pais" class="form-label">País</label>
+          <select class="form-select" id="pais" name="pais" required>
+            <option value="">Selecciona tu país</option>
+            <option value="argentina">Argentina</option>
+            <option value="brasil">Brasil</option>
+            <option value="chile">Chile</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="telefono"
+            name="telefono"
+            required
+          />
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div class="row justify-content-end mb-4">
+      <div class="col-md-4">
+        <button>Guardar Cambios</button>
+      </div>
+    </div>
+  </form>
 </div>
-
-<script>
-  let archivo = document.getElementById("exampleFormControlFile1"); let imagen =
-  document.getElementById("imagenProbando"); let file;
-  archivo.addEventListener("change",function(){ file = archivo.files[0];
-  if(file){ const fileReader = new FileReader();
-  fileReader.addEventListener("load",function(){
-  imagen.setAttribute("src",fileReader.result); })
-  fileReader.readAsDataURL(file); } })
-
-</script>
