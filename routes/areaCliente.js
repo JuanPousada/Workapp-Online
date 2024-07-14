@@ -7,8 +7,4 @@ router.get("/", function (req, res, next) {
   res.render("areaCliente");
 });
 
-router.get("/miCuenta", function (req, res, next) {
-  res.render("miCuenta");
-});
-
 module.exports = router;
