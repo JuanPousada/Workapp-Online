@@ -8,22 +8,19 @@ const connection = require("../bbdd")
 
 // SIGN UP
 
-exports.register = (req, res) => {
-  
-    const nombre = req.body.nombreRegistro;
-    const apellido = req.body.apellidoRegistro;
-    const email = req.body.emailRegistro;
-    const contrasena = req.body.contrasenaRegistro;
-    const contrasenaC = req.body.contrasenaRegistroC;
-    const pais = req.body.pais;
+exports.register =(req, res) =>{
+  const nombre = req.body.nombreRegistro;
+  const apellido = req.body.apellidoRegistro;
+  const email = req.body.emailRegistro;
+  const contrasena = req.body.contrasenaRegistro;
+  const contrasenaC = req.body.contrasenaRegistroC;
+  const pais = req.body.pais;
 
-        
-    
-    connection.query('SELECT email FROM usuarios WHERE email= ?', [email], async(error, results) => {
-        if (error) throw error;
-        if (nombre !== '' & apellido !== '' & email !== '' & contrasena !==''){
-        if (results.length > 0){
-            return res.render('areaCliente',{
+  connection.query('SELECT email FROM usuarios WHERE email= ?', [email], async(error, results) => {
+    if (error) throw error;
+    if (nombre !== '' & apellido !== '' & email !== '' & contrasena !==''){
+      if (results.length > 0){
+        return res.render('areaCliente',{
             message: 'El mail ingresado está en uso'
             })
         }else if (contrasena !== contrasenaC){
@@ -52,47 +49,43 @@ exports.register = (req, res) => {
     
     
 }
-)}
-
-
+  )
+}
 
 //LOGIN
 
 exports.login = (req, res)=>{
-    const emailLogin = req.body.emailLogin;
-    const contrasenaLogin = req.body.contrasenaLogin;
+  const emailLogin = req.body.emailLogin;
+  const contrasenaLogin = req.body.contrasenaLogin;
 
-    if (emailLogin !== '' & contrasenaLogin !== ''){
-        connection.query('SELECT email, contraseña FROM usuarios WHERE email= ?', [emailLogin], async(error, results) => {
-            if (error) throw error;
-            if (results.length > 0){
-                connection.query('SELECT contraseña FROM usuarios WHERE email= ?', [emailLogin], async(error, results) =>{
-                    if (error) throw error;
-                    let data =JSON.parse(JSON.stringify(results));
-                    let contraseñaDb = data[0].contraseña;
-                    console.log(contraseñaDb);
-                    bcrypt.compare(contrasenaLogin, contraseñaDb,(error, isMatch) =>{
-                        if(!isMatch){
-                            res.render('areaCliente',{
-                                messageLogin: 'Contraseña incorrecta'
-                            })
-                        }else{
-                            res.render('miCuenta')
-                        }
-                    }   
-                    )
-                })
-                
+  if (emailLogin !== '' & contrasenaLogin !== ''){
+    connection.query('SELECT email, contraseña FROM usuarios WHERE email= ?', [emailLogin], async(error, results) => {
+      if (error) throw error;
+      if (results.length > 0){
+        connection.query('SELECT contraseña FROM usuarios WHERE email= ?', [emailLogin], async(error, results) =>{
+          if (error) throw error;
+          let data =JSON.parse(JSON.stringify(results));
+          let contraseñaDb = data[0].contraseña;
+          console.log(contraseñaDb);
+          bcrypt.compare(contrasenaLogin, contraseñaDb,(error, isMatch) =>{
+            if(!isMatch){
+              res.render('areaCliente',{
+                messageLogin: 'Contraseña incorrecta'
+              })
             }else{
-                res.render('areaCliente',{
-                    messageLogin: 'No existe usuario registrado con ese mail'
-                })
+              res.render('miCuenta')
             }
+          })
+        })          
+      }else{
+        res.render('areaCliente',{
+          messageLogin: 'No existe usuario registrado con ese mail'
         })
-    }
-    else{
-        return res.render('areaCliente',{
-            messageLogin: 'Por favor complete todos los campos'
-        })
-    }    
-    }
+      }
+    })
+  }else{
+    return res.render('areaCliente',{
+      messageLogin: 'Por favor complete todos los campos'
+    })
+  }    
+}

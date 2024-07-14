@@ -7,6 +7,8 @@ var logger = require("morgan");
 var homeRouter = require("./routes/home");
 var cursosRouter = require("./routes/cursos");
 var areaClienteRouter = require("./routes/areaCliente");
+var authRouter = require("./routes/auth")
+const bodyParser = require("body-parser")
 
 var app = express();
 
@@ -15,14 +17,16 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 
 app.use(logger("dev"));
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", homeRouter);
 app.use("/cursos", cursosRouter);
 app.use("/areaCliente", areaClienteRouter);
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
