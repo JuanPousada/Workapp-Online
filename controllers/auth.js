@@ -73,7 +73,7 @@ exports.login = (req, res)=>{
                 messageLogin: 'Contraseña incorrecta'
               })
             } else {
-                res.render("finalizado", {
+                res.render("operacionExitosa", {
                   descripcion: "Se ha iniciado Sesión Correctamente"
                 });
             }
