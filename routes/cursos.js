@@ -24,7 +24,7 @@ router.get("/adminCursos", function (req, res, next) {
   });
 });
 
-//Cargar Curso
+//Agregar Curso
 
 router.get("/agregarCurso", function (req, res, next) {
   res.render("agregarCurso");
@@ -40,7 +40,7 @@ router.post("/agregarCurso", upload.single("imagen"), async function (req, res, 
     function (error) {}
   );
 
-  res.render("operacionExitosa", { mensaje: "Curso Ingresado Correctamente" });
+  res.render("operacionExitosa", { descripcion: "Su curso ha sido agregado correctamente" });
 });
 
 router.get("/editarCurso/:id_curso", function (req, res, next) {

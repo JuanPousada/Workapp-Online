@@ -7,8 +7,8 @@
 </div>
 <div class="container containerCursos text-center">      
   {{#each data}}
-  <div class="rowCursos col-5 cardCurso">
-    <div class="col-12 border border-warning rounded p-2">
+  <div class="rowCursos col-4">
+    <div class="col-11 border border-warning rounded p-4 cardCurso">
       <div class="single-item">
         <div class="text-center">
           <img src="{{{imagen}}}" style="width: 200px"/>
@@ -20,14 +20,9 @@
               <div class="package-list">
               <p> {{descripcion}} </p>
             </div>
-            {{!-- <ul>
-              <li>Duración: {{duracion}} </li>
-              <li>Modalidad: {{modalidad}} </li>
-              <li>Lugar: {{lugar}} </li>
-            </ul> --}}
-              <p>Duración: {{duracion}} </p>
-              <p>Modalidad: {{modalidad}} </p>
-              <p>Lugar: {{lugar}} </p>
+            <p>Duración: {{duracion}} </p>
+            <p>Modalidad: {{modalidad}} </p>
+            <p>Lugar: {{lugar}} </p>
          </div>
         </div>
       </div>

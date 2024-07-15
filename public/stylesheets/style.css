@@ -309,8 +309,6 @@ footer {
   justify-content: space-around;
 }
 
-/*Area cliente
-
 /*ADMINISTRACION DE CURSOS*/
 
 th img {
@@ -349,6 +347,12 @@ th img {
   background-color: #ffca8b !important;
 }
 
+.cardCurso {
+  min-height: 510px;
+  background-color: #262626;
+  color: #eeeeee;
+}
+
 /*Mi Cuenta*/
 
 .mb-50 {
@@ -366,11 +370,11 @@ th img {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #f17524; /* Borde gris con grosor de 2px */
-  cursor: pointer; /* Cambia el cursor a pointer para indicar que es clickeable */
+  border: 2px solid #f17524;
+  cursor: pointer; 
 }
 #foto_perfil {
-  display: none; /* Esconde el input de tipo file */
+  display: none;
 }
 
 .cuadro-cursos {
