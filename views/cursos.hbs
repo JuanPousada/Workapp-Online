@@ -5,12 +5,12 @@
     </span>
   </h1>
 </div>
-<div class="container containerCursos">      
+<div class="container containerCursos text-center">      
   {{#each data}}
-  <div class="row col-5 cardCurso">
+  <div class="rowCursos col-5 cardCurso">
     <div class="col-12 border border-warning rounded p-2">
       <div class="single-item">
-        <div class="img-holder">
+        <div class="text-center">
           <img src="{{{imagen}}}" style="width: 200px"/>
         </div>
         <div class="content">
@@ -20,17 +20,20 @@
               <div class="package-list">
               <p> {{descripcion}} </p>
             </div>
-            <ul>
+            {{!-- <ul>
               <li>Duración: {{duracion}} </li>
               <li>Modalidad: {{modalidad}} </li>
               <li>Lugar: {{lugar}} </li>
-            </ul>
+            </ul> --}}
+              <p>Duración: {{duracion}} </p>
+              <p>Modalidad: {{modalidad}} </p>
+              <p>Lugar: {{lugar}} </p>
          </div>
         </div>
       </div>
       <div class="button text-center">
-        <a rel="nofollow" class="botonFormulario" href="/areaCliente/miCuenta/index.html" title="Inscribirse a PERSONAL TRAINER Y MUSCULACIÓN">
-          <span class="inscribirse">Inscribirse</i></span>
+        <a rel="nofollow" class="btnWA" href="/areaCliente" title="Inscribirse">
+          Inscribirse
         </a>
       </div>
     </div>
@@ -40,6 +43,6 @@
 </div>
 <div class="container text-center p-5">
    <div>
-      <a href="/cursos/adminCursos" class="botonFormulario">Administración de cursos</a>
+      <a href="/cursos/adminCursos" class="btnWA">Administración de cursos</a>
    </div>
 </div>

@@ -15,6 +15,15 @@ a {
 
 body {
   padding-top: 55px;
+  padding-bottom: 400px;
+  position: relative;
+  min-height: 100vh;
+}
+
+/*CLASES*/
+
+.text-primaryWA {
+  color: #f17524
 }
 
 .btnWA {
@@ -140,13 +149,7 @@ h6 {
   background-color: #f17524;
 }
 
-/* /MAIN--------------------------------------------
-*/
-
-img {
-  display: block;
-  width: 100%;
-}
+/*HEADER*/
 
 .header-logo img {
   max-width: 60px;
@@ -184,6 +187,12 @@ img {
 }
 
 /*FOOTER*/
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 .footer-logo img {
   max-width: 200px;
@@ -232,10 +241,6 @@ img {
   right: 0;
   background: #f17524;
   border: 1px solid #f17524;
-}
-
-.copyright-text p a {
-  color: #f17524;
 }
 
 /* AREA CLIENTE */
@@ -297,22 +302,7 @@ img {
   margin: 30px 0px 30px 0px;
 }
 
-.botonFormulario {
-  background-color: #000000;
-  color: white;
-  text-decoration: none;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-}
 
-.botonFormulario:hover {
-  background-color: #f17524;
-  color: #ffca8b;
-  padding: 8px;
-  border-radius: 8px;
-  border: none;
-}
 
 .radiosForms {
   display: flex;
@@ -321,21 +311,25 @@ img {
 
 /*Area cliente
 
-/* Listado </*/
-  .containerCursos{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    
-    flex-wrap: wrap;
-  }  
+/*ADMINISTRACION DE CURSOS*/
 
-  .row{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    max-height: 50rem;
-    margin-bottom: 5rem;
+th img {
+  width: 200px;
+}
+
+.containerCursos{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+}  
+
+.rowCursos{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  max-height: 50rem;
+  margin-bottom: 5rem;
 }
 
 .containerCursos .button{
@@ -354,8 +348,6 @@ img {
   border-style: none;
   background-color: #ffca8b !important;
 }
-
-/* Listado > */
 
 /*Mi Cuenta*/
 

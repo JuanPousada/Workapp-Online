@@ -26,11 +26,11 @@ router.get("/adminCursos", function (req, res, next) {
 
 //Cargar Curso
 
-router.get("/alta", function (req, res, next) {
-  res.render("formularioAlta");
+router.get("/agregarCurso", function (req, res, next) {
+  res.render("agregarCurso");
 });
 
-router.post("/alta", upload.single("imagen"), async function (req, res, next) {
+router.post("/agregarCurso", upload.single("imagen"), async function (req, res, next) {
   let sentencia = `insert into cursos(curso, imagen, descripcion, duracion, modalidad, lugar, precio) values ("${req.body.curso}","/images/cursos/${req.file.originalname}","${req.body.descripcion}","${req.body.duracion}","${req.body.modalidad}","${req.body.lugar}","${req.body.precio}")`;
 
   let results = await connection.query(sentencia);
@@ -40,7 +40,7 @@ router.post("/alta", upload.single("imagen"), async function (req, res, next) {
     function (error) {}
   );
 
-  res.render("finalizado", { mensaje: "Curso Ingresado Correctamente" });
+  res.render("operacionExitosa", { mensaje: "Curso Ingresado Correctamente" });
 });
 
 router.get("/editarCurso/:id_curso", function (req, res, next) {
@@ -70,7 +70,7 @@ router.post(
 
     connection.query(sentencia, function (error, results, fields) {
       if (error) throw error;
-      res.render("finalizado", { descripcion: "Su curso se ha editado correctamente" });
+      res.render("operacionExitosa", { descripcion: "Su curso se ha editado correctamente" });
     });
   }
 );
@@ -92,7 +92,7 @@ router.post("/eliminarCurso/:id_curso", function (req, res, next) {
     "delete from cursos where id_curso = " + req.params.id_curso,
     function (error, results, fields) {
       if (error) throw error;
-      res.render("finalizado", { descripcion: "El curso se ha eliminado correctamente" });
+      res.render("operacionExitosa", { descripcion: "El curso se ha eliminado correctamente" });
     }
   );
 });

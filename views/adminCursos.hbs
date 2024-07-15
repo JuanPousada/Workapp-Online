@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container pb-5">
   <div class="section-title text-center m-2 p-3">
   <h1 class="col-12"><span class="col-12">Administración de Cursos</span></h1>
 </div>
   <div class="row">
     <div class="col">
-
       <table class="table table-hover table-striped table-bordered table-light">
         <thead>
           <tr class="text-center">
@@ -33,11 +32,11 @@
               <th>{{precio}}</th>
               <th><a
                   href="/cursos/editarCurso/{{id_curso}}"
-                  class="botonFormulario"
+                  class="btnWA"
                 >Editar</a></th>
               <th><a
                   href="/cursos/eliminarCurso/{{id_curso}}"
-                  class="botonFormulario"
+                  class="btnWA"
                 >Eliminar</a></th>
             </tr>
           {{/each}}
@@ -45,10 +44,13 @@
       </table>
 
     </div>
-    <div class="row mb-3 justify-content-center">
-      <div class="col-2">
-        <a href="/cursos/alta" class="botonFormulario">Agregar Curso</a>
-      </div>
-    </div>
+    
+  </div>
+</div>
+<div class="container text-center mb-4">
+  <div>
+    <a href="/cursos/agregarCurso" class="btnWA">
+      Agragar Curso
+    </a>
   </div>
 </div>
